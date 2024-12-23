@@ -1,0 +1,77 @@
+*{
+  font-family: 'PT', sans-serif;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+@font-face{
+  font-family: 'PT';
+  src: url('../fonts/PTSerif-Regular.ttf')
+  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: #fff;
+}
+
+.container {
+  flex: 1 0 auto; /* Permet à .container de prendre toute la hauteur disponible */
+  text-align: center;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.social-link {
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+  color: #3d3837;
+}
+.animate-on-scroll{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+.animate-on-scroll.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.social-icon {
+  margin-bottom: 10px;
+}
+div a{
+  text-decoration: none;
+}
+.footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-shrink: 0; /* Assure que le footer ne se rétrécit pas */
+  text-align: center;
+  padding: 10px 0;
+}
+footer a{
+  color: rgb(10, 10, 219);;
+  text-decoration: underline;
+}
+footer a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+/* Formulaire de contact */
+#contact-form {
+  background: rgba(0, 0, 0, 0.5); /* Arrière-plan du formulaire */
+  padding: 20px;
+  border-radius: 10px; /* Coins arrondis */
+}
+
+/* by Abdoul Rachid BISSARE / +229 01 63 61 49 80 */
