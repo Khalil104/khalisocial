@@ -8,13 +8,14 @@ KhaliSocial est une plateforme permettant de regrouper tous mes profils sociaux 
 - Formulaire de contact avec validation des données utilisateur.
 
 ## Déploiement
-Ce site est déployé sur GitHub Pages. Visitez le site ici : [Lien vers le site](https://votre-site.github.io/).
+Ce site est déployé sur GitHub Pages. Visitez le site ici : [Lien vers le site](https://khalil104.github.io/khalisocial/).
 
 ## Technologies utilisées
 - **HTML5** et **CSS3** : Structure et styles du site.
 - **Bootstrap 5** : Pour une interface responsive.
 - **FontAwesome** : Pour les icônes sociales.
 - **Google Fonts** : Pour une police personnalisée.
+- **Formspree** : Pour recueillir les informations du formulaire.
 - **JavaScript** : Ajout d'animations et validations des formulaires.
 
 ## Créé par
