@@ -1,30 +1,51 @@
 # KhaliSocial
 
-KhaliSocial est une plateforme permettant de regrouper tous mes profils sociaux en un seul endroit. Elle offre également un formulaire de contact pour faciliter la communication.
+**KhaliSocial** est une plateforme web personnelle qui centralise l’ensemble de mes profils sociaux en un seul lien. Elle facilite également la prise de contact via un formulaire intégré.
+
+---
 
 ## Fonctionnalités
-- Navigation fluide et interactive.
-- Animations lors du défilement des sections.
-- Formulaire de contact avec validation des données utilisateur.
 
-## Déploiement
-Ce site est déployé sur GitHub Pages. Visitez le site ici : [Lien vers le site](https://khalil104.github.io/khalisocial/).
+- Interface **intuitive** et **responsive**
+- **Animations dynamiques** lors du défilement des sections
+- **Formulaire de contact** avec validation des champs utilisateur
+
+---
+
+## Aperçu en ligne
+
+Le projet est hébergé via **GitHub Pages**.  
+**Lien vers le site** : [https://khalil104.github.io/khalisocial/](https://khalil104.github.io/khalisocial/)
+
+---
 
 ## Technologies utilisées
-- **HTML5** et **CSS3** : Structure et styles du site.
-- **Bootstrap 5** : Pour une interface responsive.
-- **FontAwesome** : Pour les icônes sociales.
-- **Google Fonts** : Pour une police personnalisée.
-- **Formspree** : Pour recueillir les informations du formulaire.
-- **JavaScript** : Ajout d'animations et validations des formulaires.
 
-## Créé par
+- `HTML5` & `CSS3` – structure et mise en forme
+- `Bootstrap 5` – responsive design
+- `FontAwesome` – icônes sociales
+- `Google Fonts` – typographie personnalisée
+- `Formspree` – gestion du formulaire de contact
+- `JavaScript` – animations et validation de formulaire
+
+---
+
+## Auteur
+
 - **Nom** : Abdoul Rachid BISSARE  
-- **Contact** : +229 0163614980  
-- **Année** : 2024  
+- **Téléphone** : +229 01 63 61 49 80  
+- **Année** : 2024
 
-## Contribuer
-Si vous souhaitez contribuer à ce projet, vous pouvez ouvrir une issue ou soumettre une pull request.
+---
+
+## Contribution
+
+Les contributions sont les bienvenues !  
+N'hésitez pas à **ouvrir une issue** ou à **soumettre une pull request** pour proposer une amélioration.
+
+---
 
 ## Licence
-Ce projet est libre d'utilisation pour des usages personnels ou éducatifs.
+
+Projet libre pour un usage **personnel ou éducatif**.  
+Pour un usage commercial, veuillez me contacter au préalable.
