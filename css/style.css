@@ -1,77 +1,259 @@
-*{
-  font-family: 'PT', sans-serif;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-}
-@font-face{
-  font-family: 'PT';
-  src: url('../fonts/PTSerif-Regular.ttf')
-  format('truetype');
-  font-weight: normal;
-  font-style: normal;
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  color: #fff;
+    color: white;
+    line-height: 1.6;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-.container {
-  flex: 1 0 auto; /* Permet à .container de prendre toute la hauteur disponible */
-  text-align: center;
+.gradient-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
-.navbar {
-  background-color: rgba(0, 0, 0, 0.5);
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+section {
+    padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+/* Social Media Section */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .social-link {
-  color: #fff;
-  transition: transform 0.3s ease;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
-.social-link:hover {
-  transform: scale(1.1);
-  color: #3d3837;
-}
-.animate-on-scroll{
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-out;
-}
-.animate-on-scroll.visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-.social-icon {
-  margin-bottom: 10px;
-}
-div a{
-  text-decoration: none;
-}
-.footer {
-  background-color: rgba(0, 0, 0, 0.5);
-  flex-shrink: 0; /* Assure que le footer ne se rétrécit pas */
-  text-align: center;
-  padding: 10px 0;
-}
-footer a{
-  color: rgb(10, 10, 219);;
-  text-decoration: underline;
-}
-footer a:hover{
-  color: #fff;
-  text-decoration: none;
-}
-/* Formulaire de contact */
-#contact-form {
-  background: rgba(0, 0, 0, 0.5); /* Arrière-plan du formulaire */
-  padding: 20px;
-  border-radius: 10px; /* Coins arrondis */
+.social-link i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
 }
 
-/* by Abdoul Rachid BISSARE / +229 01 63 61 49 80 */
+.social-card:hover .social-link i {
+    transform: scale(1.2);
+}
+
+.social-link span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Contact Form */
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.terms-link {
+    color: white;
+    text-decoration: underline;
+}
+
+.submit-btn {
+    background: white;
+    color: #6e8efb;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.success-message {
+    text-align: center;
+    background: rgba(46, 213, 115, 0.2);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.success-message i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #2ed573;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gradient-bg {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
