@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions d'Utilisation - KhaliSocial</title>
+    <style>
+        :root {
+            --primary: #1D809F;
+            --primary-dark: #155f76;
+            --primary-darker: #0e4253;
+            --accent: #a8e6ff;
+            --text: #333333;
+            --light: #f8f9fa;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark), var(--primary-darker));
+            background-size: 300% 300%;
+            animation: gradient 15s ease infinite;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-darker);
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .icon {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            body {
+                background-attachment: fixed;
+                animation: none;
+                background: linear-gradient(to bottom, var(--primary), var(--primary-darker));
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-file-contract icon"></i>Conditions d'Utilisation</h1>
+        <p><em>Dernière mise à jour : 15 juin 2024</em></p>
+
+        <section id="introduction">
+            <h2><i class="fas fa-info-circle icon"></i>Introduction</h2>
+            <p>Bienvenue sur KhaliSocial. En accédant à ce service, vous acceptez les présentes conditions d'utilisation.</p>
+        </section>
+
+        <section id="utilisation">
+            <h2><i class="fas fa-user-check icon"></i>Utilisation Acceptable</h2>
+            <p>Vous vous engagez à utiliser ce service :</p>
+            <ul>
+                <li>À des fins légales et non frauduleuses</li>
+                <li>Sans perturber la sécurité ou la disponibilité du service</li>
+                <li>Sans tenter d'accéder à des données non publiques</li>
+            </ul>
+        </section>
+
+        <section id="propriete">
+            <h2><i class="fas fa-copyright icon"></i>Propriété Intellectuelle</h2>
+            <p>Tous les éléments visuels, textuels et fonctionnels de KhaliSocial sont la propriété exclusive d'Abdoul Rachid BISSARE ou de ses concédants de licence.</p>
+        </section>
+
+        <section id="donnees">
+            <h2><i class="fas fa-database icon"></i>Protection des Données</h2>
+            <p>Les données collectées via le formulaire de contact sont utilisées uniquement pour répondre à votre demande. Consultez notre <a href="#">Politique de Confidentialité</a> pour plus d'informations.</p>
+        </section>
+
+        <section id="limitation">
+            <h2><i class="fas fa-exclamation-triangle icon"></i>Limitation de Responsabilité</h2>
+            <p>KhaliSocial ne peut être tenu responsable des dommages indirects résultant de l'utilisation du service.</p>
+        </section>
+
+        <section id="modifications">
+            <h2><i class="fas fa-edit icon"></i>Modifications des Conditions</h2>
+            <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications prendront effet dès leur publication.</p>
+        </section>
+
+        <section id="contact">
+            <h2><i class="fas fa-envelope icon"></i>Nous Contacter</h2>
+            <p>Pour toute question concernant ces conditions : <a href="mailto:contact@example.com">contact@example.com</a></p>
+        </section>
+
+        <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a>
+    </div>
+
+    <script>
+        // Animation douce pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Bouton retour en haut apparaît au scroll
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+    </script>
+</body>
+</html>
