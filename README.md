@@ -32,6 +32,7 @@ KhaliSocial est une landing page moderne qui centralise l'ensemble de mes profil
 
 ## 📂 Structure du Projet
 
+````html
 khalisocial/
 ├── assets/
 │ ├── css/
@@ -40,7 +41,7 @@ khalisocial/
 ├── index.html
 ├── README.md
 └── LICENSE
-
+````
 ## 👨‍💻 Auteur
 
 **Abdoul Rachid BISSARE**  
