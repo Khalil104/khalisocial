@@ -1,34 +1,357 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KhaliSocial | Connect with Me</title>
+    <title>KhaliSocial | Mon Hub Personnel</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-     <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/rachid_khalisocial.jpg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-   <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet">
+    <style>
+        /* === BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        body {
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .gradient-bg {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1D809F, #155f76, #0e4253);
+            padding: 2rem;
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* === HEADER === */
+        header {
+            text-align: center;
+            padding: 2rem 0 3rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* === SECTIONS === */
+        section {
+            padding: 3rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+        }
+
+        /* === SOCIAL SECTION === */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .social-link i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover .social-link i {
+            transform: scale(1.2) rotate(5deg);
+            color: #a8e6ff;
+        }
+
+        .social-link span {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* === CONTACT FORM === */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 0 2px rgba(168, 230, 255, 0.5);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .error-message {
+            color: #ff9e9e;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .terms-link {
+            color: #a8e6ff;
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            background: white;
+            color: #1D809F;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: #f0f0f0;
+        }
+
+        .success-message {
+            text-align: center;
+            background: rgba(46, 213, 115, 0.2);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .success-message i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2ed573;
+        }
+
+        /* === ETHICS NOTICE === */
+        .ethics-notice {
+            padding: 2rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ethics-card {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border-left: 4px solid #a8e6ff;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .ethics-card i {
+            font-size: 2.5rem;
+            color: #a8e6ff;
+            margin-bottom: 1rem;
+        }
+
+        .ethics-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .ethics-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .ethics-link {
+            color: #a8e6ff;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .signature {
+            font-style: italic;
+            margin-top: 1.5rem;
+            opacity: 0.8;
+            font-size: 1rem;
+            color: #a8e6ff;
+        }
+
+        /* === FOOTER === */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gradient-bg {
+                padding: 1.5rem;
+            }
+            
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            section {
+                padding: 2rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="gradient-bg">
         <header data-aos="fade-down">
             <h1>KhaliSocial</h1>
-            <p>Connect with me across platforms</p>
+            <p>Mon hub personnel pour rester connecté</p>
         </header>
 
         <main>
             <section class="about" data-aos="fade-up">
-                <h2>About Me</h2>
-                <p>Welcome to my personal hub where you can find all my social profiles and get in touch.</p>
+                <h2>À Propos</h2>
+                <p>Bienvenue sur mon espace personnel où vous pouvez retrouver tous mes réseaux et me contacter.</p>
             </section>
 
             <section class="social-section">
-                <h2 data-aos="fade-right">My Social Profiles</h2>
+                <h2 data-aos="fade-right">Mes Réseaux Sociaux</h2>
                 <div class="social-grid">
-                    <!-- Social Media Cards -->
                     <div class="social-card" data-aos="flip-left" data-aos-delay="100">
                         <a href="#" target="_blank" class="social-link">
                             <i class="fab fa-twitter"></i>
@@ -74,10 +397,10 @@
             </section>
 
             <section class="contact-section">
-                <h2 data-aos="fade-left">Get In Touch</h2>
+                <h2 data-aos="fade-left">Me Contacter</h2>
                 <form id="contactForm" class="contact-form" data-aos="zoom-in">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
+                        <label for="name">Nom Complet</label>
                         <input type="text" id="name" name="name" required>
                         <small class="error-message"></small>
                     </div>
@@ -96,26 +419,129 @@
                     
                     <div class="form-group checkbox-group">
                         <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms">I accept the <a href="#" class="terms-link">Terms of Use</a></label>
+                        <label for="terms">J'accepte les <a href="#" class="terms-link">Conditions d'Utilisation</a></label>
                         <small class="error-message"></small>
                     </div>
                     
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="submit" class="submit-btn">Envoyer le Message</button>
                 </form>
                 
                 <div id="successMessage" class="success-message" style="display: none;">
                     <i class="fas fa-check-circle"></i>
-                    <p>Your message has been sent successfully!</p>
+                    <p>Votre message a été envoyé avec succès !</p>
+                </div>
+            </section>
+
+            <!-- Section Éthique IA -->
+            <section class="ethics-notice" data-aos="fade-up">
+                <div class="ethics-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Avec une utilisation responsable des outils modernes...</h3>
+                    <p>
+                        KhaliSocial a été optimisé avec des IA, mais chaque décision vient d'un humain — moi.  
+                        <strong>Ces outils sont des assistants, pas des créateurs.</strong>  
+                        Discutons-en via le formulaire si le sujet vous intéresse.
+                    </p>
+                    <div class="signature">— Khalil</div>
                 </div>
             </section>
         </main>
 
         <footer data-aos="fade-up">
-            <p>&copy; <span id="year"></span> KhaliSocial. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> KhaliSocial. Tous droits réservés.</p>
         </footer>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        // Initialisation AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+            
+            // Année dans le footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Validation du formulaire
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Réinitialisation des erreurs
+                const errorMessages = document.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => {
+                    msg.style.display = 'none';
+                    msg.textContent = '';
+                });
+                
+                let isValid = true;
+                
+                // Validation du nom
+                const nameInput = document.getElementById('name');
+                if (nameInput.value.trim() === '' || !/^[a-zA-ZÀ-ÿ\s-]+$/.test(nameInput.value.trim())) {
+                    showError(nameInput, 'Veuillez entrer un nom valide (lettres seulement)');
+                    isValid = false;
+                }
+                
+                // Validation de l'email
+                const emailInput = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    showError(emailInput, 'Veuillez entrer une adresse email valide');
+                    isValid = false;
+                }
+                
+                // Validation du message
+                const messageInput = document.getElementById('message');
+                if (messageInput.value.trim() === '' || messageInput.value.trim().length < 10) {
+                    showError(messageInput, 'Le message doit contenir au moins 10 caractères');
+                    isValid = false;
+                }
+                
+                // Validation de la checkbox
+                const termsInput = document.getElementById('terms');
+                if (!termsInput.checked) {
+                    const termsError = termsInput.closest('.form-group').querySelector('.error-message');
+                    termsError.textContent = 'Vous devez accepter les conditions';
+                    termsError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Simulation d'envoi
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'flex';
+                    
+                    // Réinitialisation après 3 secondes
+                    setTimeout(() => {
+                        contactForm.reset();
+                        contactForm.style.display = 'block';
+                        successMessage.style.display = 'none';
+                    }, 3000);
+                }
+            });
+            
+            function showError(input, message) {
+                const formGroup = input.closest('.form-group');
+                const errorElement = formGroup.querySelector('.error-message');
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                
+                input.style.border = '2px solid #ff9e9e';
+                
+                input.addEventListener('input', function() {
+                    errorElement.style.display = 'none';
+                    input.style.border = 'none';
+                    input.style.background = 'rgba(255, 255, 255, 0.15)';
+                }, { once: true });
+            }
+        });
+    </script>
 </body>
 </html>
