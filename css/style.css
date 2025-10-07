@@ -1,31 +1,35 @@
-/* Base Styles */
+/* === BASE === */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
     color: white;
     line-height: 1.6;
-    font-family: 'Source Sans Pro', sans-serif;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 .gradient-bg {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1D809F, #155f76, #0e4253);
+    padding: 2rem;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
+/* === HEADER === */
 header {
     text-align: center;
-    padding: 2rem 0;
+    padding: 2rem 0 3rem;
 }
 
 header h1 {
@@ -35,13 +39,16 @@ header h1 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    letter-spacing: 1px;
 }
 
 header p {
     font-size: 1.2rem;
     opacity: 0.9;
+    font-style: italic;
 }
 
+/* === SECTIONS === */
 section {
     padding: 3rem 0;
     max-width: 1200px;
@@ -66,7 +73,7 @@ h2::after {
     border-radius: 3px;
 }
 
-/* Social Media Section */
+/* === SOCIAL SECTION === */
 .social-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -75,20 +82,20 @@ h2::after {
 }
 
 .social-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 1.5rem;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.03);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .social-link {
@@ -103,11 +110,12 @@ h2::after {
 .social-link i {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .social-card:hover .social-link i {
-    transform: scale(1.2);
+    transform: scale(1.2) rotate(5deg);
+    color: #a8e6ff;
 }
 
 .social-link span {
@@ -115,9 +123,9 @@ h2::after {
     font-weight: 500;
 }
 
-/* Contact Form */
+/* === CONTACT FORM === */
 .contact-form {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 15px;
@@ -143,7 +151,7 @@ h2::after {
     padding: 0.8rem;
     border: none;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     color: white;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -152,16 +160,17 @@ h2::after {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 0 2px rgba(168, 230, 255, 0.5);
 }
 
 .form-group textarea {
     resize: vertical;
+    min-height: 150px;
 }
 
 .error-message {
-    color: #ff6b6b;
+    color: #ff9e9e;
     font-size: 0.8rem;
     margin-top: 0.3rem;
     display: none;
@@ -178,13 +187,13 @@ h2::after {
 }
 
 .terms-link {
-    color: white;
+    color: #a8e6ff;
     text-decoration: underline;
 }
 
 .submit-btn {
     background: white;
-    color: #6e8efb;
+    color: #1D809F;
     border: none;
     padding: 1rem 2rem;
     font-size: 1rem;
@@ -193,11 +202,13 @@ h2::after {
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
+    letter-spacing: 0.5px;
 }
 
 .submit-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: #f0f0f0;
 }
 
 .success-message {
@@ -217,18 +228,74 @@ h2::after {
     color: #2ed573;
 }
 
-/* Footer */
+/* === ETHICS NOTICE === */
+.ethics-notice {
+    padding: 2rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ethics-card {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    border-left: 4px solid #a8e6ff;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.ethics-card i {
+    font-size: 2.5rem;
+    color: #a8e6ff;
+    margin-bottom: 1rem;
+}
+
+.ethics-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.ethics-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.ethics-link {
+    color: #a8e6ff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.signature {
+    font-style: italic;
+    margin-top: 1.5rem;
+    opacity: 0.8;
+    font-size: 1rem;
+    color: #a8e6ff;
+}
+
+/* === FOOTER === */
 footer {
     text-align: center;
     padding: 2rem 0;
     margin-top: 2rem;
     opacity: 0.8;
+    font-size: 0.9rem;
 }
 
-/* Responsive Design */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.5rem;
+    }
+    
+    .gradient-bg {
+        padding: 1.5rem;
     }
     
     .social-grid {
@@ -241,10 +308,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .gradient-bg {
-        padding: 1rem;
-    }
-    
     header h1 {
         font-size: 2rem;
     }
@@ -255,5 +318,9 @@ footer {
     
     .contact-form {
         padding: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
     }
 }

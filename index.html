@@ -3,338 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Développeur web Junior | Community Manager" />
+    <meta name="author" content="Abdoul Rachid BISSARE" />
+    <meta property="og:title" content="KhaliSocial">
+    <meta property="og:description" content="Passionné par le numérique, je crée des sites web performants, du contenu et gère des communautés en ligne avec créativité et engagement.">
+    <meta property="og:image" content="assets/rhd_ks.jpg">
+    <meta property="og:url" content="rachidbissare.vercel.app">
     <title>KhaliSocial | Mon Hub Personnel</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet">
-    <style>
-        /* === BASE === */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
+    <link rel="stylesheet" href="css/style.css">
 
-        body {
-            color: white;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .gradient-bg {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1D809F, #155f76, #0e4253);
-            padding: 2rem;
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* === HEADER === */
-        header {
-            text-align: center;
-            padding: 2rem 0 3rem;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #ffffff, #e0e0e0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-style: italic;
-        }
-
-        /* === SECTIONS === */
-        section {
-            padding: 3rem 0;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: white;
-            border-radius: 3px;
-        }
-
-        /* === SOCIAL SECTION === */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .social-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .social-link {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-        }
-
-        .social-link i {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-card:hover .social-link i {
-            transform: scale(1.2) rotate(5deg);
-            color: #a8e6ff;
-        }
-
-        .social-link span {
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        /* === CONTACT FORM === */
-        .contact-form {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 0 0 2px rgba(168, 230, 255, 0.5);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .error-message {
-            color: #ff9e9e;
-            font-size: 0.8rem;
-            margin-top: 0.3rem;
-            display: none;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-        }
-
-        .checkbox-group input {
-            width: auto;
-            margin-right: 0.5rem;
-        }
-
-        .terms-link {
-            color: #a8e6ff;
-            text-decoration: underline;
-        }
-
-        .submit-btn {
-            background: white;
-            color: #1D809F;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            letter-spacing: 0.5px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            background: #f0f0f0;
-        }
-
-        .success-message {
-            text-align: center;
-            background: rgba(46, 213, 115, 0.2);
-            padding: 2rem;
-            border-radius: 15px;
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .success-message i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #2ed573;
-        }
-
-        /* === ETHICS NOTICE === */
-        .ethics-notice {
-            padding: 2rem 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .ethics-card {
-            background: rgba(0, 0, 0, 0.15);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            border-left: 4px solid #a8e6ff;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(5px);
-        }
-
-        .ethics-card i {
-            font-size: 2.5rem;
-            color: #a8e6ff;
-            margin-bottom: 1rem;
-        }
-
-        .ethics-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .ethics-card p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-
-        .ethics-link {
-            color: #a8e6ff;
-            text-decoration: underline;
-            font-weight: 500;
-        }
-
-        .signature {
-            font-style: italic;
-            margin-top: 1.5rem;
-            opacity: 0.8;
-            font-size: 1rem;
-            color: #a8e6ff;
-        }
-
-        /* === FOOTER === */
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        /* === RESPONSIVE === */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .gradient-bg {
-                padding: 1.5rem;
-            }
-            
-            .social-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            section {
-                padding: 2rem 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-form {
-                padding: 1.5rem;
-            }
-            
-            h2 {
-                font-size: 1.7rem;
-            }
-        }
-    </style>
+    <link rel="icon" type="image/x-icon" href="assets/rhd_ks.jpg">
 </head>
 <body>
     <div class="gradient-bg">
@@ -353,21 +34,21 @@
                 <h2 data-aos="fade-right">Mes Réseaux Sociaux</h2>
                 <div class="social-grid">
                     <div class="social-card" data-aos="flip-left" data-aos-delay="100">
-                        <a href="#" target="_blank" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                            <span>Twitter</span>
+                        <a href="https://x.com/rhd_khalil104?t=Wj6EteAcQ7_IofrBgHoyqg&s=09" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i> <!-- Logo de X -->
+                            <span>X</span>
                         </a>
                     </div>
                     
                     <div class="social-card" data-aos="flip-left" data-aos-delay="200">
-                        <a href="#" target="_blank" class="social-link">
+                        <a href="https://www.linkedin.com/in/rhdkhalil104" target="_blank" class="social-link">
                             <i class="fab fa-linkedin-in"></i>
                             <span>LinkedIn</span>
                         </a>
                     </div>
                     
                     <div class="social-card" data-aos="flip-left" data-aos-delay="300">
-                        <a href="#" target="_blank" class="social-link">
+                        <a href="https://github.com/Khalil104" target="_blank" class="social-link">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
@@ -388,9 +69,15 @@
                     </div>
                     
                     <div class="social-card" data-aos="flip-left" data-aos-delay="600">
-                        <a href="#" target="_blank" class="social-link">
+                        <a href="https://www.facebook.com/profile.php?id=61580417747485" target="_blank" class="social-link">
                             <i class="fab fa-facebook-f"></i>
                             <span>Facebook</span>
+                        </a>
+                    </div>
+                    <div class="social-card" data-aos="flip-left" data-aos-delay="600">
+                        <a href="#" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -398,7 +85,7 @@
 
             <section class="contact-section">
                 <h2 data-aos="fade-left">Me Contacter</h2>
-                <form id="contactForm" class="contact-form" data-aos="zoom-in">
+                <form action="..." method="post" id="contactForm" class="contact-form" data-aos="zoom-in" >
                     <div class="form-group">
                         <label for="name">Nom Complet</label>
                         <input type="text" id="name" name="name" required>
