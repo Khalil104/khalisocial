@@ -7,15 +7,22 @@
     <meta name="author" content="Abdoul Rachid BISSARE" />
     <meta property="og:title" content="KhaliSocial">
     <meta property="og:description" content="Passionné par le numérique, je crée des sites web performants, du contenu et gère des communautés en ligne avec créativité et engagement.">
-    <meta property="og:image" content="assets/rhd_ks.jpg">
+    <meta property="og:image" content="assets/rhd_ks.webp">
     <meta property="og:url" content="rachidbissare.vercel.app">
-    <title>KhaliSocial | Mon Hub Personnel</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet">
+    <title>KhaliSocial</title>
+    <!-- Preconnect pour optimiser le chargement -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS optimisé avec version minifiée -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="icon" type="image/x-icon" href="assets/rhd_ks.jpg">
+    <!-- Favicon optimisé -->
+    <link rel="icon" type="image/webp" href="assets/rhd_ks.webp">
 </head>
 <body>
     <div class="gradient-bg">
@@ -135,100 +142,12 @@
         </main>
 
         <footer data-aos="fade-up">
-            <p>&copy; <span id="year"></span> KhaliSocial. Tous droits réservés.</p>
+            <p>&copy; <span id="year"></span>2025 KhaliSocial. Tous droits réservés.</p>
         </footer>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialisation AOS
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false
-            });
-            
-            // Année dans le footer
-            document.getElementById('year').textContent = new Date().getFullYear();
-            
-            // Validation du formulaire
-            const contactForm = document.getElementById('contactForm');
-            const successMessage = document.getElementById('successMessage');
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Réinitialisation des erreurs
-                const errorMessages = document.querySelectorAll('.error-message');
-                errorMessages.forEach(msg => {
-                    msg.style.display = 'none';
-                    msg.textContent = '';
-                });
-                
-                let isValid = true;
-                
-                // Validation du nom
-                const nameInput = document.getElementById('name');
-                if (nameInput.value.trim() === '' || !/^[a-zA-ZÀ-ÿ\s-]+$/.test(nameInput.value.trim())) {
-                    showError(nameInput, 'Veuillez entrer un nom valide (lettres seulement)');
-                    isValid = false;
-                }
-                
-                // Validation de l'email
-                const emailInput = document.getElementById('email');
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailInput.value.trim())) {
-                    showError(emailInput, 'Veuillez entrer une adresse email valide');
-                    isValid = false;
-                }
-                
-                // Validation du message
-                const messageInput = document.getElementById('message');
-                if (messageInput.value.trim() === '' || messageInput.value.trim().length < 10) {
-                    showError(messageInput, 'Le message doit contenir au moins 10 caractères');
-                    isValid = false;
-                }
-                
-                // Validation de la checkbox
-                const termsInput = document.getElementById('terms');
-                if (!termsInput.checked) {
-                    const termsError = termsInput.closest('.form-group').querySelector('.error-message');
-                    termsError.textContent = 'Vous devez accepter les conditions';
-                    termsError.style.display = 'block';
-                    isValid = false;
-                }
-                
-                if (isValid) {
-                    // Simulation d'envoi
-                    contactForm.style.display = 'none';
-                    successMessage.style.display = 'flex';
-                    
-                    // Réinitialisation après 3 secondes
-                    setTimeout(() => {
-                        contactForm.reset();
-                        contactForm.style.display = 'block';
-                        successMessage.style.display = 'none';
-                    }, 3000);
-                }
-            });
-            
-            function showError(input, message) {
-                const formGroup = input.closest('.form-group');
-                const errorElement = formGroup.querySelector('.error-message');
-                errorElement.textContent = message;
-                errorElement.style.display = 'block';
-                
-                input.style.border = '2px solid #ff9e9e';
-                
-                input.addEventListener('input', function() {
-                    errorElement.style.display = 'none';
-                    input.style.border = 'none';
-                    input.style.background = 'rgba(255, 255, 255, 0.15)';
-                }, { once: true });
-            }
-        });
-    </script>
+    <!-- Scripts optimisés avec versions minifiées -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
